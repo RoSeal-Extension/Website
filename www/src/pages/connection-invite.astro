@@ -1,0 +1,17 @@
+---
+import MainLayout from "../layouts/Main.astro";
+import "../styles/deeplink.scss";
+import DeepLinkPage from "../components/solid/DeepLinkPage";
+---
+
+<MainLayout
+    title="Accept Connection Invite"
+    description="Accept a connection invite from another Roblox user who uses RoSeal. Roblox App or the RoSeal extension is required. RoSeal is a free Roblox website extension available for Chrome, Firefox, and Edge."
+    noIndex
+>
+    <DeepLinkPage
+        type="friendInvite"
+        title="Accept Connection Invite"
+        client:load
+    />
+</MainLayout>

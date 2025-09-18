@@ -1,0 +1,105 @@
+---
+const footerItems = [
+	{
+		name: "Terms of Service",
+		path: "/terms-of-service",
+	},
+	{
+		name: "Privacy Policy",
+		path: "/privacy-policy",
+	},
+	{
+		name: "Support",
+		path: "/support",
+	},
+	{
+		name: "Submit an Experience Wiki",
+		path: "https://docs.google.com/forms/d/e/1FAIpQLSeDMi_sUNYimp0VMlJa7961Mo3QiYT8VVG2wv6qzFoQlyEvnw/viewform",
+	},
+];
+---
+
+<style lang="scss">
+    .global-footer-container {
+        background: var(--background-color);
+        border-top: 1px solid var(--background-border-color);
+        padding: 15px;
+        width: calc(100% - 30px);
+        overflow: auto;
+        max-height: 320px;
+
+        .footer-table {
+            text-align: center;
+            display: flex;
+            gap: 3em;
+            flex-wrap: wrap;
+
+            .footer-row {
+                display: flex;
+                gap: 0.3em;
+                flex-direction: column;
+                flex-basis: calc(50% - 3em);
+
+                &.copyright-text {
+                    flex-basis: 100%;
+                    text-decoration: underline;
+                    text-underline-offset: 5px;
+                }
+
+                .footer-row-text {
+                    font-size: 12px;
+                    color: var(--text-color-secondary);
+                }
+
+                .footer-row-text-items {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.6em;
+
+                    .footer-row-text-item-link {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
+        }
+    }
+</style>
+<footer class="global-footer-container">
+    <ul class="footer-table">
+        <li class="footer-row disclaimer-text">
+            <span class="footer-row-title">Disclaimer</span>
+            <span class="footer-row-text"
+                >RoSeal is not affiliated, associated, or endorsed by Roblox
+                Corporation. Roblox and its various marks and logos are
+                trademarks of Roblox Corporation.</span
+            >
+        </li>
+        <li class="footer-row list-items">
+            <span class="footer-row-title">Links</span>
+            <ul class="footer-row-text footer-row-text-items">
+                {
+                    footerItems.map((item) => (
+                        <li class="footer-row-text-item">
+                            <a
+                                href={item.path}
+                                class="footer-row-text-item-link"
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </li>
+        <li class="footer-row copyright-text">
+            <span class="footer-row-text">
+                © Copyright 2022-{new Date().getUTCFullYear()} roseal.live, All
+                rights reserved
+            </span>
+        </li>
+    </ul>
+</footer>

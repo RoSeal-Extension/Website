@@ -1,0 +1,480 @@
+---
+import "reset-css/reset.css";
+import GlobalFooter from "../components/astro/GlobalFooter.astro";
+import GlobalNavigation from "../components/astro/GlobalNavigation.astro";
+import Alerts from "../components/solid/Alerts";
+
+const ROSEAL_PURPLE = "#4a4ec4";
+
+type Props = {
+	title?: string;
+	description?: string;
+	lastUpdated?: number | string;
+	noIndex?: boolean;
+};
+
+const {
+	title: titleInput,
+	description = "RoSeal is a browser extension for improving the Roblox website, available for Chrome, Firefox, and Edge.",
+	lastUpdated,
+	noIndex,
+} = Astro.props;
+const title = titleInput ? `${titleInput} | RoSeal` : "RoSeal";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<link rel="canonical" href={Astro.url.href} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<meta name="language" content="en-US" />
+		<meta
+			name="robots"
+			content={noIndex
+				? "noindex,nofollow"
+				: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}
+		/>
+		<meta name="description" content={description} />
+		<meta
+			name="keywords"
+			content="roblox extension, roblox addon, improve roblox, roseal, roblox enhancement, roblox browser extension, roblox website improvement, chrome extension for roblox, firefox addon for roblox, edge extension for roblox, roblox user experience, roblox website enhancement"
+		/>
+		{
+			lastUpdated ? (
+				<meta
+					name="last-modified"
+					content={new Date(lastUpdated).toUTCString()}
+				/>
+			) : null
+		}
+
+		<meta name="author" content="roseal.live" />
+		<meta
+			name="copyright"
+			content={`© ${new Date().getFullYear()} roseal.live`}
+		/>
+		<meta name="color-scheme" content="light" />
+		<meta name="theme-color" content={ROSEAL_PURPLE} />
+
+		<meta name="distribution" content="global" />
+		<meta name="coverage" content="Worldwide" />
+		<meta name="target" content="all" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/_static/og-image.png" />
+		<meta property="og:site_name" content="RoSeal" />
+		<meta property="og:locale" content="en_US" />
+
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content="/_static/og-image.png" />
+		<meta name="twitter:site" content="@RoSealExtension" />
+		<meta name="twitter:creator" content="@juliaroseal" />
+
+		<link rel="icon" type="image/x-icon" href="/_static/icon.ico" />
+		<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png" />
+
+		<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+		<script defer is:inline>
+			// From utils/theme.ts... keep this inline so theme can be loaded instantly
+			function handleTheme(isDark) {
+				if (isDark) {
+					document.documentElement.classList.add("theme-dark");
+				} else {
+					document.documentElement.classList.remove("theme-dark");
+				}
+
+				document
+					.querySelector('[name="color-scheme"]')
+					?.setAttribute("content", isDark ? "dark" : "light");
+			}
+
+			const matchesDark = window.matchMedia(
+				"(prefers-color-scheme: dark)",
+			);
+
+			const storedTheme = localStorage.getItem("theme");
+			const theme =
+				storedTheme || (matchesDark.matches ? "dark" : "light");
+			if (storedTheme === null) {
+				matchesDark.addEventListener("change", (e) => {
+					handleTheme(e.matches);
+				});
+			}
+
+			handleTheme(theme === "dark");
+		</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "SoftwareApplication",
+				"name": "RoSeal",
+				"operatingSystem": "Windows, Mac OS, Linux",
+				"applicationCategory": "BrowserExtension",
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				},
+				"description": "RoSeal is a browser extension for improving the Roblox website experience"
+			}
+		</script>
+	</head>
+
+	<style is:global lang="scss">
+		:root {
+			--experimental-color: #0a941a;
+			--beta-color: #007f9e;
+
+			--purple-color: #4a4ec4;
+			--lighter-purple-color: #6e72eb;
+			--orange-color: #c4814a;
+
+			--background-color: #f8f8f8;
+			--background-border-color: rgb(169, 169, 169);
+			--background-2-color: rgb(224, 224, 224);
+			--background-border-2-color: rgb(198, 198, 198);
+			--text-color: black;
+			--text-color-hover: #2c2c2c;
+			--text-color-secondary: #646464;
+			--link-color: #131879;
+			--top-nav-color: #f8f8f87e;
+
+			--logo-inner-color: white;
+			--logo-background-color: var(--purple-color);
+
+			--primary-btn-color: var(--purple-color);
+			--primary-btn-text-color: white;
+			--primary-btn-hover-color: #3a3ec3;
+
+			--table-even-row-color: #6e72eb24;
+
+			&.theme-dark {
+				--text-color: white;
+				--text-color-hover: #d7d7d7;
+				--text-color-secondary: darkgray;
+				--background-color: #1b1e25;
+				--background-2-color: black;
+				--background-border-color: rgb(82, 82, 82);
+				--background-border-2-color: rgb(54, 54, 54);
+				--link-color: #9497fa;
+				--top-nav-color: #1b1e257e;
+
+				--logo-background-color: var(--lighter-purple-color);
+			}
+		}
+
+		.beta-feature-label,
+		.experimental-feature-label {
+			border-style: solid;
+			border-radius: 8px;
+			display: inline-block;
+			font-weight: bold;
+			color: #fff;
+			padding: 2px;
+		}
+
+		.experimental-feature-label {
+			background-color: var(--experimental-color);
+			border-color: var(--experimental-color);
+		}
+
+		.beta-feature-label {
+			background-color: var(--beta-color);
+			border-color: var(--beta-color);
+		}
+
+		svg {
+			display: block;
+		}
+
+		.section {
+			width: 100%;
+			display: inline-grid;
+
+			&:after,
+			&:before {
+				content: " ";
+				display: table;
+				clear: both;
+			}
+		}
+
+		p {
+			color: var(--text-color-secondary);
+		}
+
+		a {
+			color: var(--link-color);
+			text-decoration: underline;
+		}
+
+		.btn-primary {
+			text-decoration: none;
+			background-color: var(--primary-btn-color);
+			color: var(--primary-btn-text-color);
+			border-radius: 8px;
+			padding: 10px 15px;
+			font-size: 16px;
+			cursor: pointer;
+			border: none;
+			transition: 0.2s;
+
+			&:hover {
+				background-color: var(--primary-btn-hover-color);
+			}
+		}
+
+		h1 {
+			font-weight: bold;
+			font-size: 32px;
+
+			@media (max-width: 767px) {
+				font-size: 28px;
+			}
+		}
+
+		h2 {
+			font-size: 28px;
+
+			@media (max-width: 767px) {
+				font-size: 24px;
+			}
+		}
+
+		h3 {
+			font-size: 24px;
+
+			@media (max-width: 767px) {
+				font-size: 20px;
+			}
+		}
+
+		h4 {
+			font-size: 20px;
+
+			@media (max-width: 767px) {
+				font-size: 16px;
+			}
+		}
+
+		button {
+			border: none;
+			margin: 0;
+			padding: 0;
+			width: auto;
+			overflow: visible;
+			cursor: pointer;
+			display: block;
+
+			background: transparent;
+
+			/* inherit font & color from ancestor */
+			color: inherit;
+			font: inherit;
+
+			/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+			line-height: normal;
+
+			/* Corrects font smoothing for webkit */
+			-webkit-font-smoothing: inherit;
+			-moz-osx-font-smoothing: inherit;
+
+			/* Corrects inability to style clickable `input` types in iOS */
+			-webkit-appearance: none;
+			/* Remove excess padding and border in Firefox 4+ */
+			&::-moz-focus-inner {
+				border: 0;
+				padding: 0;
+			}
+		}
+
+		.collapse:not(.show) {
+			display: none;
+		}
+
+		.collapsing {
+			height: 0;
+			overflow: hidden;
+			transition: height 0.35s ease;
+		}
+
+		.accordion {
+			color: var(--text-color-secondary);
+			width: 100%;
+			border-radius: 8px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			border: 1px solid var(--background-border-2-color);
+
+			.accordion-item {
+				width: 100%;
+				&:not(:last-child) {
+					border-bottom: 1px solid var(--background-border-2-color);
+				}
+
+				.accordion-header-button {
+					padding: 1em;
+				}
+
+				.accordion-header {
+					width: 100%;
+					transition: background 0.2s ease-in-out;
+				}
+
+				.accordion-header,
+				.accordion-header-button {
+					text-align: initial;
+					width: 100%;
+				}
+
+				.accordion-content-container {
+					.accordion-content {
+						padding: 1em;
+					}
+				}
+
+				&.show {
+					.accordion-header {
+						background: var(--primary-btn-color);
+						color: var(--primary-btn-text-color);
+					}
+				}
+			}
+		}
+
+		.tooltip-content {
+			z-index: 50;
+			max-width: min(calc(100vw - 16px), 380px);
+			border: 1px solid var(--background-border-2-color);
+			border-radius: 6px;
+			padding: 8px;
+			background: var(--background-2-color);
+			font-size: 14px;
+			transition: opacity 200ms;
+			opacity: 0;
+			animation: tooltipContentHide 250ms ease-in forwards;
+
+			&[data-expanded] {
+				opacity: 1;
+				animation: tooltipContentShow 250ms ease-out;
+			}
+		}
+
+		@keyframes tooltipContentShow {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+		@keyframes tooltipContentHide {
+			from {
+				opacity: 1;
+			}
+			to {
+				opacity: 0;
+			}
+		}
+
+		.alert-primary {
+			padding: 0.8em 0;
+			background: var(--primary-btn-color);
+			color: var(--primary-btn-text-color);
+			text-align: center;
+			width: 100%;
+
+			.alert-link {
+				color: var(--primary-btn-text-color);
+				text-decoration: underline;
+			}
+		}
+	</style>
+
+	<body>
+		<GlobalNavigation />
+		<Alerts client:only="solid-js" />
+		<main>
+			<div class="page-content">
+				<slot />
+			</div>
+		</main>
+		<GlobalFooter />
+	</body>
+
+	<style lang="scss">
+		html {
+			font-family: Inter, sans-serif, system-ui;
+			background: var(--background-color);
+			background-size: 224px;
+			color: var(--text-color);
+
+			@media (max-width: 767px) {
+				font-size: 14px;
+			}
+		}
+
+		html,
+		body {
+			height: 100%;
+		}
+
+		body {
+			line-height: 1.4;
+			margin: 8px;
+			position: relative;
+			// min margin-top: 67px, height of nav
+			margin-top: 4em;
+
+			@media (max-width: 767px) {
+				margin-top: 5em;
+			}
+		}
+
+		main {
+			min-height: 100vh;
+		}
+
+		.alerts-container {
+			min-height: 48px;
+		}
+
+		.page-content {
+			margin: auto;
+			padding: 2rem;
+			line-height: 1.6;
+			max-width: 1338px;
+
+			@media (max-width: 767px) {
+				padding: 1rem;
+			}
+
+			@media (max-width: 1338px) {
+				max-width: 1154px;
+			}
+
+			@media (max-width: 1154px) {
+				max-width: 970px;
+			}
+		}
+	</style>
+</html>

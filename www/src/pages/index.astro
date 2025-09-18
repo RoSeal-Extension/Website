@@ -1,0 +1,256 @@
+---
+import InstallButton from "../components/solid/InstallButton";
+import { allListedFeatures } from "../data/features";
+import MainLayout from "../layouts/Main.astro";
+
+/*
+const images = import.meta.glob("../assets/images/features/*.png", {
+	query: "?url",
+	import: "default",
+});*/
+---
+
+<MainLayout title="Home">
+	<div class="landing-container">
+		<div class="landing-headline">
+			<h1>Tons of features for the Roblox website. Ro🦭</h1>
+			<p>
+				The RoSeal extension is available for Chrome, Firefox, and Edge
+			</p>
+			<InstallButton client:load />
+		</div>
+	</div>
+
+	<div class="feature-showcase-container" id="features">
+		<div class="feature-showcase-headline">
+			<h2>See the features</h2>
+			<p>
+				Some features may be disabled by default. Beta/Experimental
+				features must be toggled on to be used.<br />All features can be
+				configured in RoSeal settings.
+			</p>
+		</div>
+		{
+			/*
+		<ul class="feature-showcase-list">
+			{
+				features.map((feature) => {
+					const lightImage =
+						images[
+							`../assets/images/features/${feature.id}.light.png`
+						]?.();
+					const darkImage =
+						images[
+							`../assets/images/features/${feature.id}.dark.png`
+						]?.();
+
+					return (
+						<li
+							class="feature-showcase-item"
+							id={`feature-${feature.id}`}
+						>
+							<div class="feature-image-container">
+								{lightImage ? (
+									// @ts-expect-error: Fine, astro is fucking stupid
+									<Image
+										class="feature-image light-only"
+										src={lightImage}
+										alt={feature.title}
+									/>
+								) : null}
+								{darkImage ? (
+									// @ts-expect-error: Fine, astro is fucking stupid
+									<Image
+										class="feature-image dark-only"
+										src={darkImage}
+										alt={feature.title}
+									/>
+								) : null}
+							</div>
+							<div class="feature-description">
+								<h3>{feature.title}</h3>
+								<p>{feature.description}</p>
+							</div>
+						</li>
+					);
+				})
+			}
+		</ul>
+		*/
+		}
+		<div class="all-features-container" id="all-features">
+			<h4>All Features</h4>
+			<table class="all-features-list">
+				<thead>
+					<tr>
+						<th>Section</th>
+						<th>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						allListedFeatures.map((section) =>
+							section.features.map((feature) => (
+								<tr>
+									<td>{section.name}</td>
+									<td>
+										{feature.type !== "Regular" && (
+											<span
+												class={`${feature.type.toLowerCase()}-feature-label`}
+											>
+												{feature.type.toUpperCase()}
+											</span>
+										)}
+										{feature.name}
+									</td>
+								</tr>
+							)),
+						)
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<style lang="scss">
+		.feature-showcase-container {
+			margin-top: 4em;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 2em;
+
+			.feature-showcase-headline {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+
+			.all-features-container {
+				margin-top: 1em;
+				.beta-feature-label,
+				.experimental-feature-label {
+					margin-right: 0.2em;
+				}
+
+				.all-features-list {
+					margin-top: 1em;
+					text-align: left;
+
+					> tbody > tr > td {
+						padding: 12px;
+					}
+					> tbody > tr:nth-child(even) > td {
+						background-color: var(--table-even-row-color);
+					}
+
+					> thead > tr > th {
+						padding: 12px;
+						vertical-align: bottom;
+						border-bottom: 1px solid var(--background-border-color);
+					}
+				}
+			}
+
+			.feature-showcase-list {
+				width: 85%;
+				border: 1px solid var(--background-border-color);
+				border-radius: 8px;
+
+				.feature-showcase-item {
+					display: flex;
+					gap: 1em;
+					padding: 1em;
+					width: calc(100% - 2em);
+
+					&:nth-child(even) {
+						background-color: var(--table-even-row-color);
+					}
+
+					&:not(:last-child) {
+						border-bottom: 1px solid var(--background-border-color);
+					}
+
+					&:nth-child(odd) {
+						@media (min-width: 768px) {
+							flex-direction: row-reverse;
+
+							.feature-description {
+								text-align: right;
+							}
+						}
+					}
+
+					@media (max-width: 767px) {
+						flex-direction: column;
+					}
+
+					.feature-image-container {
+						flex-basis: 50%;
+
+						.feature-image {
+							.light-only {
+								.theme-dark & {
+									display: none;
+								}
+							}
+							&.dark-only {
+								display: none;
+
+								.theme-dark & {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.landing-container {
+			&,
+			.landing-headline {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			:global(.install-button-container) {
+				color: var(--text-color-secondary);
+				margin-top: 1.5em;
+
+				:global(.browser-not-supported-text) {
+					text-align: center;
+					min-height: 45.59px;
+				}
+
+				:global(.install-button) {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					:global(.browser-icon svg) {
+						margin-left: 0.35em;
+						margin-right: 0.15em;
+						width: 1em;
+						height: 1em;
+					}
+				}
+
+				:global(.other-install-links-container) {
+					margin: 1em auto;
+					font-size: 12px;
+					max-width: 200px;
+
+					:global(.other-install-links) {
+						display: flex;
+						justify-content: space-between;
+					}
+				}
+			}
+		}
+	</style>
+</MainLayout>

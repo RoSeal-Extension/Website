@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /friend-invite
+Disallow: /connection-invite
+
+Sitemap: https://www.roseal.live/sitemap-index.xml

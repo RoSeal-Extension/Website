@@ -1,0 +1,42 @@
+---
+import MainLayout from "./Main.astro";
+
+type Props = {
+	htmlTitle?: string;
+	htmlDescription?: string;
+	title: string;
+	lastUpdated?: number | string;
+};
+
+const { htmlTitle, htmlDescription, title, lastUpdated } = Astro.props;
+---
+
+<style lang="scss">
+    .updated-date {
+        font-size: 12px;
+    }
+</style>
+<MainLayout
+    title={htmlTitle ?? title}
+    description={htmlDescription}
+    lastUpdated={lastUpdated}
+>
+    <div class="title-container">
+        <h1>
+            {title}
+        </h1>
+        {
+            lastUpdated && (
+                <p class="updated-date">
+                    Last updated{" "}
+                    {new Date(lastUpdated).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })}
+                </p>
+            )
+        }
+    </div>
+    <slot />
+</MainLayout>

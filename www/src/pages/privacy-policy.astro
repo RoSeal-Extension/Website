@@ -1,0 +1,104 @@
+---
+import Document from "../layouts/Document.astro";
+---
+
+<style lang="scss">
+    .permission-list {
+        display: flex;
+        gap: 0.5em;
+        flex-direction: column;
+    }
+</style>
+<Document
+    title="Privacy Policy"
+    lastUpdated={1751673581263}
+    htmlDescription={"Read about RoSeal's Privacy Policy, including permissions used by RoSeal. RoSeal is a free Roblox website extension available for Chrome, Firefox, and Edge."}
+>
+    <div class="section">
+        <p>
+            RoSeal does not transfer any personal data.<br />Several of RoSeal's
+            functionalities require the user's browser to make an external
+            request to data.roseal.live, a RoSeal-owned domain. Data sent and
+            received from data.roseal.live contains no personally identifiable
+            information.<br /><br />RoSeal may locally store some user data in
+            the user's browser, such as sensitive cookies from usage of the
+            "Accounts Manager" feature, and it will never be transferred outside
+            of the user's browser.<br /><br />RoSeal's servers and website are
+            backed by Cloudflare. Cloudflare's privacy policy applies: <a
+                href="https://www.cloudflare.com/privacypolicy"
+                >https://www.cloudflare.com/privacypolicy</a
+            >
+        </p>
+    </div>
+    <div class="section">
+        <div class="section-header">
+            <h2>Permissions we use</h2>
+        </div>
+        <ul class="permission-list">
+            <li>
+                <span>://*.roblox.com/*</span>
+                <p>
+                    Allows RoSeal to access Roblox APIs in the background on
+                    behalf of the user and access cookies when paired with the
+                    optional Cookies permission
+                </p>
+            </li>
+            <li>
+                <span>*://*.roseal.live/*</span>
+                <p>
+                    Allows RoSeal to access RoSeal APIs in the background on
+                    behalf of the user
+                </p>
+            </li>
+            <li>
+                <span>Storage</span>
+                <p>
+                    Allows RoSeal to access and store data. RoSeal uses it to
+                    store feature values and data associated with features
+                </p>
+            </li>
+            <li>
+                <span>Web Request API</span>
+                <p>
+                    Allows RoSeal to analyze web traffic. RoSeal only uses it to
+                    change 404 redirects of some pages with some features
+                    enabled
+                </p>
+            </li>
+            <li>
+                <span>Declarative Net Request API</span>
+                <p>
+                    Allows RoSeal to modify some web traffic. RoSeal only uses
+                    it to access APIs that are only accessible through the
+                    Roblox app
+                </p>
+            </li>
+            <li>
+                <span>Alarms</span>
+                <p>Allows RoSeal to schedule background tasks</p>
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <div class="section-header">
+            <h2>Permissions we may request</h2>
+        </div>
+        <ul class="permission-list">
+            <li>
+                <span>Cookies</span>
+                <p>
+                    Allows RoSeal to modify and read roblox.com cookies. RoSeal
+                    only uses it when the Accounts Manager feature is enabled to
+                    switch accounts and store account session tokens
+                </p>
+            </li>
+            <li>
+                <span> *://*.rolimons.com </span>
+                <p>
+                    Allows RoSeal to get historical data, such as statistics, of
+                    Roblox experiences
+                </p>
+            </li>
+        </ul>
+    </div>
+</Document>

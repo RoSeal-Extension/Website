@@ -1,0 +1,18 @@
+---
+import MainLayout from "../layouts/Main.astro";
+import "../styles/deeplink.scss";
+import DeepLinkPage from "../components/solid/DeepLinkPage";
+---
+
+<MainLayout
+    title="Join Roblox Server"
+    description="Join a specific Roblox server by link. RoSeal is a free Roblox website extension available for Chrome, Firefox, and Edge."
+    noIndex
+>
+    <DeepLinkPage
+        type="joinPlace"
+        title="Join Roblox Server"
+        forceProtocol
+        client:load
+    />
+</MainLayout>

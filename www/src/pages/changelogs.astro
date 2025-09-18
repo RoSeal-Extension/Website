@@ -1,0 +1,60 @@
+---
+import ChangelogAccordion from "../components/solid/ChangelogAccordion";
+import Document from "../layouts/Document.astro";
+---
+
+<Document
+    title="Changelogs"
+    htmlDescription="Read the changelogs for the RoSeal extension from Mizore to Gaia. RoSeal is a free Roblox website extension available for Chrome, Firefox, and Edge."
+>
+    <div class="section">
+        <ChangelogAccordion client:load />
+    </div>
+</Document>
+<style lang="scss" is:global>
+    .changelog-accordion {
+        .accordion-header-button {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+
+            .platform-list {
+                display: flex;
+                gap: 0.1em;
+                align-items: center;
+
+                .platform-icon.is-unsupported {
+                    filter: grayscale(1);
+                    opacity: 0.5;
+                }
+
+                svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                }
+            }
+
+            .changelog-version-name {
+                margin-right: auto;
+            }
+        }
+        .accordion-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25em;
+
+            .changelog-sections {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            .changelog-section-list {
+                margin-left: 1.5em;
+
+                li {
+                    list-style: disc;
+                }
+            }
+        }
+    }
+</style>

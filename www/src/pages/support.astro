@@ -1,0 +1,28 @@
+---
+import SupportAccordion from "../components/solid/SupportAccordion";
+import { DISCORD_INVITE_LINK } from "../constants";
+import Document from "../layouts/Document.astro";
+---
+
+<Document
+    title="Support Questions"
+    htmlDescription="View commonly asked questions and their answers about RoSeal. RoSeal is a free Roblox website extension available for Chrome, Firefox, and Edge."
+>
+    <div class="section">
+        <SupportAccordion client:load />
+    </div>
+    <p class="support-accordion-footer">
+        If you have any further questions, you can contact us in our <a
+            href={DISCORD_INVITE_LINK}
+        >
+            Discord server</a
+        >.
+    </p>
+</Document>
+<style lang="scss">
+    .support-accordion-footer {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+</style>

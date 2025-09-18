@@ -1,0 +1,6 @@
+{
+	"devDependencies": {
+		"@biomejs/biome": "latest"
+	},
+	"private": true
+}

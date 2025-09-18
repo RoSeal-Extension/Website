@@ -1,0 +1,23 @@
+---
+import NotFoundPage from "../components/solid/404Page";
+import MainLayout from "../layouts/Main.astro";
+---
+
+<MainLayout title="404" noIndex>
+    <NotFoundPage client:load />
+</MainLayout>
+
+<style lang="scss" is:global>
+    .page-not-found-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.4em;
+
+        h1 {
+            font-size: 60px;
+            height: 96px;
+        }
+    }
+</style>
