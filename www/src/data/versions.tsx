@@ -25,6 +25,104 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.10",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1758783679283),
+		content: {
+			summary:
+				"This release new features ported from the Roblox+ extension and all-new features.",
+			sections: [
+				{
+					title: "Features from Roblox+",
+					list: [
+						"View a user's RAP and a list of their Roblox-created Limiteds",
+						"View a Rolimon's link to an item reseller, Trade button, and when they obtained it",
+						"Wear/unwear items on you avatar from an item page",
+						"View the estimated RAP an item will be after a reseller sale",
+						"Search avatar editor items by name",
+						"Top navigation links customization",
+						"Custom Robux precision to show 0-3 numbers after decimal or when to abbreviate",
+						"Show DevExable Robux in a currency of your choosing under your Robux in navigation",
+						"Robux history chart in Transactions",
+						"Startup notifications",
+						"Trade request and trade update notifications",
+						"Connection presence update notifications",
+						"Community shout notifications",
+						"View avatar asset owners",
+					],
+				},
+				{
+					title: "New features",
+					list: [
+						"Button next to the play button on experience details to join the closest server",
+						"View which of your Connections own avatar item",
+						"Remove Marketplace advertisements in Notifications",
+						"Show DevEx rate conversion in Transactions developer exchange requests",
+					],
+				},
+				{
+					title: "Feature updates",
+					list: [
+						"In experience live stats chart, Votes and Upvotes have been combined into a single tab",
+						"Outfits are now supported in RoSeal's item lists",
+						'"Connect" button has been re-added in RoSeal\'s Home connections carousel',
+						"Experiences in playlists can be re-arranged and removed in Customice Home Layout modal",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Connection requests sometimes never loading if someone sent a request from an experience you can not access",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.9",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1758783679283),
+		content: {
+			summary:
+				"This release contains a bug fix for all items not being shown on the Avatar page with RoSeal archived items enabled.",
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.8",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1758783679283),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed fast free purchase not working on Free limiteds",
+						"Fixed RoSeal Avatar page features not working",
+						"Fixed the join button being disabled when it is indicated to be a full server with 1000+ queue",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.7",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1758783679283),
+		content: {
+			summary:
+				"This release contains an attempted bug fix for recent items not loading on the Avatar page with Archived items enabled.",
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.6",
 		platforms: ["Chrome", "Edge", "Firefox"],
 		published: new Date(1758191420558),
@@ -32,7 +130,7 @@ export const gaiaVersions: Version[] = [
 			summary: "This release contains bug fixes.",
 			sections: [
 				{
-					title: "Bug Fixes",
+					title: "Bug fixes",
 					list: [
 						"Reverted RoSeal fix for server lists as Roblox has fixed their bug",
 						"Fixed Creator Store off sale assets not showing",
