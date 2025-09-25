@@ -66,7 +66,7 @@ export const gaiaVersions: Version[] = [
 						"In experience live stats chart, Votes and Upvotes have been combined into a single tab",
 						"Outfits are now supported in RoSeal's item lists",
 						'"Connect" button has been re-added in RoSeal\'s Home connections carousel',
-						"Experiences in playlists can be re-arranged and removed in Customice Home Layout modal",
+						"Experiences in playlists can be re-arranged and removed in Customize Home Layout modal",
 					],
 				},
 				{
