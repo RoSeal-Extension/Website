@@ -30,10 +30,10 @@ export const gaiaVersions: Version[] = [
 		published: new Date(1758783679283),
 		content: {
 			summary:
-				"This release new features ported from the Roblox+ extension and all-new features.",
+				"This release new features ported from the Roblox+ browser extension and all-new features.",
 			sections: [
 				{
-					title: "Features from Roblox+",
+					title: "Features from the Roblox+ browser extension",
 					list: [
 						"View a user's RAP and a list of their Roblox-created Limiteds",
 						"View a Rolimon's link to an item reseller, Trade button, and when they obtained it",
