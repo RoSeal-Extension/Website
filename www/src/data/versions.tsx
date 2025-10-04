@@ -63,12 +63,14 @@ export const gaiaVersions: Version[] = [
 					title: "Features",
 					list: [
 						"Creator name filter has been added to the Avatar Editor search",
+						"Custom emojis have been re-enabled after a grace period",
 					],
 				},
 				{
 					title: "Bug fixes",
 					list: [
 						"Fixed some private server links not being able to be joined",
+						"View user locale has been re-enabled after a bug fix",
 					],
 				},
 			],
