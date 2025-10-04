@@ -69,7 +69,7 @@ export const gaiaVersions: Version[] = [
 				{
 					title: "Bug fixes",
 					list: [
-						"Fixed some saved private server links not being able to be joined",
+						"Fixed some private servers links in the Private Server Links section not being able to be joined",
 						"View user locale has been re-enabled after a bug fix",
 					],
 				},
