@@ -25,6 +25,128 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.15",
+		platforms: [],
+		published: new Date(1759572310849),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Add to Editor List showing on Currently Wearing Items in the Avatar Editor",
+						"Fixed posting avatars not saving the current body colors",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.14",
+		platforms: [],
+		published: new Date(1759572310849),
+		content: {
+			summary: "This release contains new features, and a bug fix.",
+			sections: [
+				{
+					title: "New features",
+					list: [
+						"View a user's published Avatars if you have access to post Curated Avatars",
+						"View the private servers that a user has shared with you in their inventory",
+						"Currently wearing items on the left side of the Avatar Editor",
+						"Allow joining non-starter places from their respective detail pages",
+					],
+				},
+				{
+					title: "Features",
+					list: [
+						"Creator name filter has been added to the Avatar Editor search",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed some private server links not being able to be joined",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.13",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1759572310849),
+		content: {
+			summary: "This release contains new features and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: [
+						{
+							title: "Improved user currently wearing section",
+							list: [
+								"Separate Animation assets into their own tab",
+								"Show the total value of the user's outfit and emotes next to the Currently Wearing header",
+							],
+						},
+						"Post your Avatars from the Avatar Editor",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Avatar editor search bar causing Outfits unable to be created",
+						"Fixed support for Blocked items in the an upcoming Roblox marketplace update",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.12",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1759572310849),
+		content: {
+			summary: "This release contains bug fixes, and QoL fixes.",
+			sections: [
+				{
+					title: "QoL fixes",
+					list: [
+						"Added missing icons to improved server join modal and made server type title smaller",
+						"RoSeal now shows when storage is unexpectedly unavailable in settings",
+						"Added system feeback to updating join privacy/online status privacy in the navigation bar",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed home sort customization reverting previous sort changes",
+						"A fix has been attempted for automatic discovery and updating accounts in RoSeal's accounts manager feature",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.11",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1759572310849),
+		content: {
+			summary:
+				"This release contains a bug fix for servers always being loaded in the background.",
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.10",
 		platforms: ["Chrome", "Edge"],
 		published: new Date(1758783679283),
@@ -82,7 +204,7 @@ export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
 		name: "2.1.9",
-		platforms: ["Chrome", "Edge"],
+		platforms: ["Chrome", "Firefox", "Edge"],
 		published: new Date(1758783679283),
 		content: {
 			summary:
