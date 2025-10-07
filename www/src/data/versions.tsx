@@ -25,6 +25,29 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.16",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1759850885335),
+		content: {
+			summary:
+				"This release contains new feature toggles, and bug fixes.",
+			sections: [
+				{
+					title: "Features",
+					list: ["Show associated bundle at the bottom right of "],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed some RoSeal list elements not properly updating",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.15",
 		platforms: [],
 		published: new Date(1759572310849),
