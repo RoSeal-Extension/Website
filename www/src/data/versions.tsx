@@ -117,7 +117,7 @@ export const gaiaVersions: Version[] = [
 				{
 					title: "New features",
 					list: [
-						"View a user's published Avatars if you have access to post Published Avatars",
+						"View a user's published Avatars if you have access to post Avatars",
 						"View the private servers that a user has shared with you in their inventory",
 						"Currently wearing items on the left side of the Avatar Editor",
 						"Allow joining non-starter places from their respective detail pages if it is allowed",
