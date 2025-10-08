@@ -34,7 +34,9 @@ export const gaiaVersions: Version[] = [
 			sections: [
 				{
 					title: "Features",
-					list: ["Show associated bundle at the bottom right of "],
+					list: [
+						"Show associated bundle at the bottom right of user profile currently wearing items",
+					],
 				},
 				{
 					title: "Bug fixes",
@@ -106,7 +108,8 @@ export const gaiaVersions: Version[] = [
 		platforms: ["Chrome", "Edge"],
 		published: new Date(1759572310849),
 		content: {
-			summary: "This release contains new features and bug fixes.",
+			summary:
+				"This release contains new features, bug fixes, and QoL fixes.",
 			sections: [
 				{
 					title: "New features",
@@ -122,9 +125,15 @@ export const gaiaVersions: Version[] = [
 					],
 				},
 				{
+					title: "QoL fixes",
+					list: [
+						"Collectible items in the user RAP modal is now sorted by total RAP",
+					],
+				},
+				{
 					title: "Bug fixes",
 					list: [
-						"Fixed Avatar editor search bar causing Outfits unable to be created",
+						"Fixed Avatar Editor search bar causing Outfits unable to be created",
 						"Fixed support for Blocked items in the an upcoming Roblox marketplace update",
 					],
 				},
@@ -146,6 +155,7 @@ export const gaiaVersions: Version[] = [
 						"Added missing icons to improved server join modal and made server type title smaller",
 						"RoSeal now shows when storage is unexpectedly unavailable in settings",
 						"Added system feeback to updating join privacy/online status privacy in the navigation bar",
+						"Closest server search button can now be clicked to cancel the search",
 					],
 				},
 				{
@@ -153,6 +163,8 @@ export const gaiaVersions: Version[] = [
 					list: [
 						"Fixed home sort customization reverting previous sort changes",
 						"A fix has been attempted for automatic discovery and updating accounts in RoSeal's accounts manager feature",
+						"Fixed private server joins with Improved Server Join modal opening the client twice",
+						"Private server links in the improved servers list no longer shows if private servers are disabled",
 					],
 				},
 			],
@@ -165,8 +177,21 @@ export const gaiaVersions: Version[] = [
 		platforms: ["Chrome", "Edge"],
 		published: new Date(1759572310849),
 		content: {
-			summary:
-				"This release contains a bug fix for servers always being loaded in the background.",
+			summary: "This release contains a QoL fix and a bug fix.",
+			sections: [
+				{
+					title: "QoL fixes",
+					list: [
+						"RoSeal's Charts filters now match Roblox's foundation colors",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed experience servers always loading in the background",
+					],
+				},
+			],
 		},
 		placementIncrement: 1,
 	},
