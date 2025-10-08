@@ -25,6 +25,45 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.17",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1759937775645),
+		content: {
+			summary:
+				"This release contains new features, QoL fixes, and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: [
+						"Force all user profile full body thumbnails to use a certain avatar type",
+					],
+				},
+				{
+					title: "Features",
+					list: [
+						"In improved user profile currently wearing, Emotes and Animations can now be excluded from the total value",
+					],
+				},
+				{
+					title: "QoL fixes",
+					list: [
+						"Recommended users in connection requests are now hidden while connections requests are loading",
+						"Filters design for badges, passes, and developer products have been redesigned",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Avatar Editor currently wearing not showing if Advanced Avatar Editor Customization is disabled",
+						"Fixed RoSeal causing the Avatar Editor to not load",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.16",
 		platforms: ["Chrome", "Edge"],
 		published: new Date(1759850885335),
