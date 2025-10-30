@@ -25,6 +25,175 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.24",
+		platforms: ["Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed connection types not being exportable from RoSeal's data management",
+						"Fixed closest server join button not being able to be enabled due to incorrect permission check",
+						"Fixed user locale text, experience supported devices, community joined dates, deleted user profile picture, not working due to an unexpected deprecation",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.23",
+		platforms: ["Chrome", "Firefox", "Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary: "This release contains bug fixes, and QoL fixes.",
+			sections: [
+				{
+					title: "QoL fixes",
+					list: [
+						"Preview text filter now shows way further left on www.roblox.com",
+						"Experience name and icon no longer show in improved server join modal if it comes directly from the experience page",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed preview user description filtering not working",
+						"Fixed silly text variables in improved join modal ",
+						"Fixed quantity remaining text support on Avatar Marketplace with a new experiment",
+						'Fixed remove button not working correctly on "View as user" in experience store',
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.22",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed a list of prices showing on Avatar item sometimes",
+						"Fixed support for the new profile header",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.21",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed RoSeal's Avatar Editor lists sometimes not showing",
+						"Fixed improved server join modal's deeplinks not working",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.20",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary: "This release contains a feature update, and a bug fix.",
+			sections: [
+				{
+					title: "Features",
+					list: [
+						"Artist name is now shown in Top Songs on experiences",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed RoSeal support for the new charts URL format",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.19",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary:
+				"This release contains a new feature, QoL fix, and a bug fix.",
+			sections: [
+				{
+					title: "New features",
+					list: ["Silly text for the improved server join modal"],
+				},
+				{
+					title: "QoL fixes",
+					list: ["Description is no longer required to post Avatars"],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed archived bundles not working in the Avatar Editor",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.18",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1761790870288),
+		content: {
+			summary:
+				"This release contains a new feature, a feature update, and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: [
+						"Automatically update the order of connections in the home connections carousel",
+					],
+				},
+				{
+					title: "Features",
+					list: ["Blocked items keywords now support RegEx patterns"],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed aspect ratio of Avatars on user profiles",
+						"Fixed deleted outfits causing avatar item lists to error",
+						"Fixed some experiences check pages infinitely loading",
+						"Fixed connection request filtering not correctly working after a Roblox update",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.17",
 		platforms: ["Chrome", "Edge"],
 		published: new Date(1759937775645),
