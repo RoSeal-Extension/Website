@@ -25,8 +25,37 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.25",
+		platforms: ["Chrome", "Firefox", "Edge"],
+		published: new Date(1763108223000),
+		content: {
+			summary: "This release contains new features and bug fixes.",
+			sections: [
+				{
+					title: "Features",
+					list: [
+						"Added a toggle for RoSeal's sorting for user Roblox badges",
+						"Added a toggle for unused asset types toggle in include more inventory types",
+						"Added a dropdown for RoSeal's improved server debug info stats",
+						"Sync browser theme feature has been removed because Roblox now has their own toggle",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Search avatar items no longer appears in the Characters section of the Avatar Editor",
+						"Fixed blocked creators not working on the Avatar Marketplace",
+						"Fixed RoSeal disabling the 3-dot context menu on user pages",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.24",
-		platforms: ["Edge"],
+		platforms: ["Chrome", "Firefox", "Edge"],
 		published: new Date(1761790870288),
 		content: {
 			summary: "This release contains bug fixes.",
