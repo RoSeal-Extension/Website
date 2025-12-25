@@ -25,6 +25,89 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.28",
+		platforms: ["Edge"],
+		published: new Date(1766649177566),
+		content: {
+			summary:
+				"This release contains a bug fix for Customize Sorts Layout not applying changes on page load",
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.28",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1766392860000),
+		content: {
+			summary:
+				"This release contains a new feature, a QoL fix, and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: ["In experience verified badge visibility toggle"],
+				},
+				{
+					title: "QoL fixes",
+					list: [
+						"Continued improvement of home page performance with Customize Sorts Layout enabled",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed RoSeal's Connections carousel on the home page showing the place icon instead of the main experience icon",
+						"Fixed Count button in user inventory stopping once it reaches two or more instances of an item",
+						"Fixed inventory obtained date not showing on hover when sort direction is set to Ascending",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.26",
+		platforms: ["Chrome", "Firefox", "Edge"],
+		published: new Date(1765094520000),
+		content: {
+			summary:
+				"This release contains new features, QoL fixes, and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: [
+						"Show which experience an item may have been created in",
+						"Show when the item thumbnail was last updated",
+					],
+				},
+				{
+					title: "Features",
+					list: [
+						"Idle animation assets can now be chosen in the Advanced Avatar Editor modal",
+					],
+				},
+				{
+					title: "QoL fixes",
+					list: [
+						'Experiences that use custom avatar types will now display "Custom" in the avatar type field instead of the inaccurate avatar type',
+						"RoSeal settings now shows when roseal.live permission is not granted, and when other critical parts of the settings fails",
+						"Improved performance of the home page with Customize Sorts Layout enabled",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed RoSeal's 404 page linking to a deleted image",
+						"Fixed community announcement thumbnails showing incorrectly with custom thumbnail sizing",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.25",
 		platforms: ["Chrome", "Firefox", "Edge"],
 		published: new Date(1763108223000),
