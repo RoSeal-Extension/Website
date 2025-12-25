@@ -14,3 +14,6 @@ export const MASTODON_PROFILE_LINK = "https://mastodon.social/@RoSeal";
 
 export const ORION_BROWSER_LINK = "https://kagi.com/orion/";
 export const EDGE_BROWSER_LINK = "https://www.microsoft.com/edge";
+
+export const ROSEAL_SOURCE_CODE_LINK =
+	"https://github.com/RoSeal-Extension/RoSeal";

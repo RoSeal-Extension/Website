@@ -11,6 +11,7 @@ import {
 	FIREFOX_LISTING_LINK,
 	MASTODON_PROFILE_LINK,
 	ROBLOX_COMMUNITY_LINK,
+	ROSEAL_SOURCE_CODE_LINK,
 	X_PROFILE_LINK,
 } from "../../constants";
 import clickOutside from "./directives/onClickOutside";
@@ -73,6 +74,10 @@ const navItems = [
 				path: ROBLOX_COMMUNITY_LINK,
 			},
 		],
+	},
+	{
+		name: "Source Code",
+		path: ROSEAL_SOURCE_CODE_LINK,
 	},
 ];
 
