@@ -25,8 +25,47 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.30",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1768356009000),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed a bug where setting Hex body colors or wearing an outfit caused the Avatar page to crash",
+						"Fixed Avatars not appearing in user favorites with more inventory tabs feature",
+						"Fixed thumbnail updated time not working on Looks",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.30",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1767816007000),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed a bug where the steps on thumbnail customization zoom were very high",
+						"Fixed removing item from experience playlists not working in home sorts custmizations modal",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.29",
-		platforms: ["Edge"],
+		platforms: ["Chrome", "Edge"],
 		published: new Date(1766649177566),
 		content: {
 			summary:
