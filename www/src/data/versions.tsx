@@ -98,6 +98,7 @@ export const gaiaVersions: Version[] = [
 						"Fixed RoSeal's Connections carousel on the home page showing the place icon instead of the main experience icon",
 						"Fixed Count button in user inventory stopping once it reaches two or more instances of an item",
 						"Fixed inventory obtained date not showing on hover when sort direction is set to Ascending",
+						'Fixed "Disable autoplay for carousel videos on the experience details page" not working due to a Roblox update',
 					],
 				},
 			],
