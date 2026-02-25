@@ -25,6 +25,258 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.42",
+		platforms: ["Edge"],
+		published: new Date(1772063139102),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed a case where having a Private Server Link with a name that includes a unicode character would cause the servers list to crash",
+						"Fixed hiding unread message counts feature not working",
+						"Fixed item restrictions not showing on improved user currently wearing",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.41",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1771906320000),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed RoSeal's improved currently wearing showing Free on off sale items",
+						"Fixed allowing/blocking the Roblox user's items not working on the Avatar Marketplace page",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.40",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1771531560000),
+		content: {
+			summary: "This release contains bug fixes.",
+			sections: [
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed connection type not showing in improved connections carousel",
+						"Added support for Roblox's new signup page for experience chat color",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.39",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1771373580000),
+		content: {
+			summary: "This release contains a feature update, and bug fixes.",
+			sections: [
+				{
+					title: "Feature updates",
+					list: [
+						"Marketplace item details is now supported in the Prefetch Roblox page data feature",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"RoSeal's features now supports Roblox's new redesigned left navigation",
+						"Fixed improved user currently wearing crashing the page when blocking or sending a friend request to the user",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.38",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1771310040000),
+		content: {
+			summary: "This release contains a feature update, and a bug fix.",
+			sections: [
+				{
+					title: "Feature updates",
+					list: [
+						"Community, Experience details are now supported in the Prefetch Roblox page data feature",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed RoSeal's portrait view causing the 3D user profile thumbnail to be undraggable",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.37",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1771119060000),
+		content: {
+			summary:
+				"This release contains a new experimental feature, feature updates, a feature removal, and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: ["Prefetch required Roblox page data"],
+				},
+				{
+					title: "Feature updates",
+					list: [
+						"Connection request filtering now includes sorting and filtering Joined Dates, and users with Administrator badges",
+						"RoSeal's Inventory and Favorites categories now includes the upcoming Makeup asset types",
+						"In preparation for an upcoming Roblox change, Accounts Manager now automatically updates account cookies. Accounts will not be automatically added unless the Automatic discovery of accounts feature is enabled",
+					],
+				},
+				{
+					title: "Removed features",
+					list: ["Move the age bracket to the left navigation"],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed trending styles header in Marketplace landing showing incorrectly",
+						"Fixed RoSeal's Currently Wearing section on profile not working",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.36",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1771006080000),
+		content: {
+			summary:
+				"This release contains a feature removal, QoL fixes, and bug fixes.",
+			sections: [
+				{
+					title: "Removed features",
+					list: ["Clickable button to view past usernames modal"],
+				},
+				{
+					title: "QoL fixes",
+					list: [
+						"User connection request filtering now uses up to 95% less requests per 100 users",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Portrait/Download 3D avatar button features on user profile",
+						"User join check is now applied on Community member lists",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.35",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1770690180000),
+		content: {
+			summary:
+				"This release contains a feature deprecation, feature removals, and bug fixes.",
+			sections: [
+				{
+					title: "Features",
+					list: [
+						"Change voice opt-in in navigation is now marked as deprecated",
+					],
+				},
+				{
+					title: "Removed features",
+					list: [
+						"Show obtained dates for Roblox badges on user profile on hover and its sub-features",
+						"Show the Roblox administrator badge on user headers",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"RoSeal's 404 page now uses the proper dark theme error image for dark theme",
+						"Fixed Marketplace landing feature not working",
+						"Fixed the styling for the Edit Background button on user profile",
+						"Fixed RoSeal user header features broken by a Roblox update",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.34",
+		platforms: ["Chrome", "Firefox", "Edge"],
+		published: new Date(1774781940000),
+		content: {
+			summary:
+				"This release contains a new feature, feature removals, QoL fixes, and bug fixes.",
+			sections: [
+				{
+					title: "Removed features",
+					list: [
+						"Link to a user's Marketplace items on the user's profile",
+						"Show the price floor of the avatar item type",
+					],
+				},
+				{
+					title: "New features",
+					list: ["Show roles for each community that a user is in"],
+				},
+				{
+					title: "QoL fixes",
+					list: [
+						"Deleted user profiles and deleted communities now have a context menu to block or allow items from them",
+						"With RoSeal's improved servers list, Connections' access to owned private servers can now be toggled from the server context menu",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Added support for Roblox's new body hex colors update",
+						"Fixed improved notification preferences settings not working",
+						"Fixed certain RoSeal components no longer receiving live presence updates",
+						"Fixed move experience events feature not working",
+						"Fixed archived items not working in Avatar Editor lists",
+						"Fixed confirm connection removal feature not working",
+						"Fixed Cancel connection requests not working on the user profile page",
+						"Fixed a case where Passes did not work in inventory sort options",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.31",
 		platforms: ["Chrome", "Edge"],
 		published: new Date(1768356009000),
