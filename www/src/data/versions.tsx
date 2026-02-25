@@ -235,7 +235,7 @@ export const gaiaVersions: Version[] = [
 		majorVersionName: "Gaia",
 		name: "2.1.34",
 		platforms: ["Chrome", "Firefox", "Edge"],
-		published: new Date(1774781940000),
+		published: new Date(1769595540000),
 		content: {
 			summary:
 				"This release contains a new feature, feature removals, QoL fixes, and bug fixes.",
