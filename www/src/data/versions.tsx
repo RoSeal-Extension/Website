@@ -27,6 +27,40 @@ export const gaiaVersions: Version[] = [
 		majorVersionName: "Gaia",
 		name: "2.1.42",
 		platforms: ["Edge"],
+		published: new Date(1772363347422),
+		content: {
+			summary:
+				"This release contains feature updates, feature deprecations, and bug fixes.",
+			sections: [
+				{
+					title: "Feature updates",
+					list: [
+						"Body parts tab has been added to improved user currently wearing, disabled by default",
+						"View user equipped emotes has been moved under improved user currently wearing",
+					],
+				},
+				{
+					title: "Feature deprecations",
+					list: [
+						"All Community wall and shout related features have been deprecated, pending removal soon",
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Hidden Bundles no longer working due to internal errors",
+						"Fixed blocked items affecting marketplace landing page incorrectly",
+						"Fixed prefetch Roblox page data not handling blocked items on the home page",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.42",
+		platforms: ["Edge"],
 		published: new Date(1772063139102),
 		content: {
 			summary: "This release contains bug fixes.",
