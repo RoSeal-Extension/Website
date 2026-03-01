@@ -1,6 +1,6 @@
 import { createEffect, createSignal, onCleanup, Show } from "solid-js";
 import { getInstalledRoSealData, isMobile } from "../../utils/browser";
-import DeepLinkParser from "@roseal/roblox-deeplink-parser";
+import DeepLinkParser from "roblox-deeplink-parser";
 
 export type DeepLinkPageProps = {
 	type: "friendInvite" | "joinPlace";
