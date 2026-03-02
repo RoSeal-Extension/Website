@@ -25,7 +25,7 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
-		name: "2.1.42",
+		name: "2.1.43",
 		platforms: ["Edge"],
 		published: new Date(1772363347422),
 		content: {
