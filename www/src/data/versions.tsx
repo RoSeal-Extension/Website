@@ -25,6 +25,108 @@ export type Version = {
 export const gaiaVersions: Version[] = [
 	{
 		majorVersionName: "Gaia",
+		name: "2.1.47",
+		platforms: [],
+		published: new Date(1774115778544),
+		content: {
+			summary: "This release contains a feature removal, and bug fixes.",
+			sections: [
+				{
+					title: "Removed features",
+					list: ["View the item tags on avatar items"],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Trusted Friends list now uses the proper endpoint after a Roblox bug fix",
+						"Fixed private servers showing update delay/performance when the server is not online",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.46",
+		platforms: ["Edge"],
+		published: new Date(1773633300000),
+		content: {
+			summary:
+				"This release contains a feature update, bug fixes, and the rename from Connections to Friends.",
+			sections: [
+				{
+					title: "New features",
+					list: ["View Community Cover asset id"],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed chart filters not working on experience search page",
+						"Fixed some cases in blocked items not correctly working",
+						"Fixed sort order ascending in friend requests not working after a Roblox update",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.45",
+		platforms: ["Chrome", "Edge"],
+		published: new Date(1773276240000),
+		content: {
+			summary: "This release contains a feature update and bug fixes.",
+			sections: [
+				{
+					title: "Feature updates",
+					list: [
+						'"Sent by" in connection request filtering now filters by sent date and not the default ordering',
+					],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed Items tab showing up on the user profile improved currently wearing if it is empty",
+						"Fixed previous usernames showing (1) if they have no previous usernames",
+						"Fixed private server links feature not allowing to reset storage",
+						"Fixed view off sale creator items not showing their asset type in some scenarios",
+						"Fixed Trusted labels not showing in connections list",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
+		name: "2.1.44",
+		platforms: ["Edge"],
+		published: new Date(1772595180000),
+		content: {
+			summary: "This release contains a new feature, and bug fixes.",
+			sections: [
+				{
+					title: "New features",
+					list: ["Show hidden item types in the Avatar Marketplace"],
+				},
+				{
+					title: "Bug fixes",
+					list: [
+						"Fixed user blocked screen sometimes not showing",
+						"Fixed sort options not working under Dynamic Heads category in inventory",
+						"Fixed force all full-body thumbnails to use a certain avatar type not working on new user profile page",
+						"Fixed show community agent id not working",
+						"Added support for the new landing page emdpoint",
+					],
+				},
+			],
+		},
+		placementIncrement: 1,
+	},
+	{
+		majorVersionName: "Gaia",
 		name: "2.1.43",
 		platforms: ["Edge"],
 		published: new Date(1772363347422),
