@@ -15,7 +15,7 @@
 		"@kobalte/core": "0.13.11",
 		"@material-symbols/svg-400": "0.42.3",
 		"roblox-deeplink-parser": "0.1.30",
-		"astro": "5.18.1",
+		"astro": "6.1.6",
 		"astro-compress": "2.4.0",
 		"detect-browser": "5.3.0",
 		"number-flow": "0.5.3",
