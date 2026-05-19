@@ -170,7 +170,6 @@ export default function ChangelogAccordionItem(
 									);
 								}
 
-								console.log(Tooltip, "Clown");
 								return (
 									<Tooltip openDelay={100}>
 										<Tooltip.Trigger
