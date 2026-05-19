@@ -1,17 +1,25 @@
-import { createEffect, createSignal, For, Match, Show, Switch } from "solid-js";
+import {
+	createEffect,
+	createMemo,
+	createSignal,
+	For,
+	Match,
+	Show,
+	Switch,
+} from "solid-js";
 import { platforms } from "../../data/versions";
-import { Tooltip } from "@kobalte/core/tooltip";
 import { AccordionContent, AccordionHeader, AccordionItem } from "./Accordion";
 import ChromeIcon from "./icons/Chrome.svg?raw";
 import FirefoxIcon from "./icons/Firefox.svg?raw";
 import EdgeIcon from "./icons/Edge.svg?raw";
+import type { Tooltip as KTooltip } from "@kobalte/core/tooltip";
 import type { Version, VersionSection } from "../../data/versions";
 import {
 	getRelativeTime,
 	getTime,
 	getAbsoluteTime,
 } from "../../utils/intlFormats";
-import { Dynamic } from "solid-js/web";
+import { Dynamic, isServer } from "solid-js/web";
 
 export type ChangelogSectionProps = {
 	section: VersionSection;
@@ -59,6 +67,7 @@ export type ChangelogAccordionItemProps = {
 export default function ChangelogAccordionItem(
 	props: ChangelogAccordionItemProps,
 ) {
+	const [_Tooltip, _setTooltip] = createSignal<typeof KTooltip>();
 	const [displayTime, setDisplayTime] = createSignal<{
 		time: string | undefined;
 	}>({
@@ -78,84 +87,131 @@ export default function ChangelogAccordionItem(
 		});
 	});
 
+	createEffect(() => {
+		if (isServer) return null;
+
+		import("@kobalte/core/tooltip").then((data) =>
+			_setTooltip(() => data.Tooltip),
+		);
+	});
+
+	const publishedContent = createMemo(() => {
+		const content = (
+			<span>{displayTime().time || "Not yet available"}</span>
+		);
+		const Tooltip = _Tooltip();
+		if (!Tooltip) {
+			return (
+				<span class="tooltip-trigger changelog-version-date">
+					{content}
+				</span>
+			);
+		}
+
+		return (
+			<Tooltip openDelay={100}>
+				<Tooltip.Trigger
+					class="tooltip-trigger changelog-version-date"
+					as="span"
+				>
+					{content}
+				</Tooltip.Trigger>
+				{props.version.published && (
+					<Tooltip.Portal>
+						<Tooltip.Content class="tooltip-content">
+							<Tooltip.Arrow />
+							<p>{getAbsoluteTime(props.version.published)}</p>
+						</Tooltip.Content>
+					</Tooltip.Portal>
+				)}
+			</Tooltip>
+		);
+	});
+
 	return (
 		<AccordionItem key={props.version.name}>
 			<AccordionHeader>
 				<span class="changelog-version-name">
 					{props.version.majorVersionName} {props.version.name}
 				</span>
-
-				<Tooltip openDelay={100}>
-					<Tooltip.Trigger
-						class="tooltip-trigger changelog-version-date"
-						as="span"
-					>
-						<span>{displayTime().time || "Not yet available"}</span>
-					</Tooltip.Trigger>
-					{props.version.published && (
-						<Tooltip.Portal>
-							<Tooltip.Content class="tooltip-content">
-								<Tooltip.Arrow />
-								<p>
-									{getAbsoluteTime(props.version.published)}
-								</p>
-							</Tooltip.Content>
-						</Tooltip.Portal>
-					)}
-				</Tooltip>
+				{publishedContent()}
 				<div class="platform-list">
 					<For each={platforms}>
 						{(platform) => {
 							const isSupported =
 								props.version.platforms.includes(platform);
+							const tooltipContent = createMemo(() => {
+								const content = (
+									<Switch>
+										<Match when={platform === "Chrome"}>
+											<span innerHTML={ChromeIcon} />
+										</Match>
+										<Match when={platform === "Firefox"}>
+											<span innerHTML={FirefoxIcon} />
+										</Match>
+										<Match when={platform === "Edge"}>
+											<span innerHTML={EdgeIcon} />
+										</Match>
+									</Switch>
+								);
 
-							return (
-								<Tooltip openDelay={100}>
-									<Tooltip.Trigger
-										class="tooltip-trigger platform-icon"
-										classList={{
-											"is-unsupported": !isSupported,
-										}}
-										as="span"
-									>
-										<Switch>
-											<Match when={platform === "Chrome"}>
-												<span innerHTML={ChromeIcon} />
-											</Match>
-											<Match
-												when={platform === "Firefox"}
-											>
-												<span innerHTML={FirefoxIcon} />
-											</Match>
-											<Match when={platform === "Edge"}>
-												<span innerHTML={EdgeIcon} />
-											</Match>
-										</Switch>
-									</Tooltip.Trigger>
-									<Tooltip.Portal>
-										<Tooltip.Content class="tooltip-content">
-											<Tooltip.Arrow />
-											<p>
-												<Switch
-													fallback={`Not yet available on ${platform}`}
-												>
-													<Match when={isSupported}>
-														Available on {platform}
-													</Match>
-													<Match
-														when={
-															!props.isLatestVersion
-														}
+								const Tooltip = _Tooltip();
+
+								if (!Tooltip) {
+									return (
+										<span
+											class="tooltip-trigger platform-icon"
+											classList={{
+												"is-unsupported": !isSupported,
+											}}
+										>
+											{content}
+										</span>
+									);
+								}
+
+								console.log(Tooltip, "Clown");
+								return (
+									<Tooltip openDelay={100}>
+										<Tooltip.Trigger
+											class="tooltip-trigger platform-icon"
+											classList={{
+												"is-unsupported": !isSupported,
+											}}
+											as="span"
+										>
+											{content}
+										</Tooltip.Trigger>
+										<Tooltip.Portal>
+											<Tooltip.Content class="tooltip-content">
+												<Tooltip.Arrow />
+												<p>
+													<Switch
+														fallback={`Not yet available on ${platform}`}
 													>
-														Unavailable on{" "}
-														{platform}
-													</Match>
-												</Switch>
-											</p>
-										</Tooltip.Content>
-									</Tooltip.Portal>
-								</Tooltip>
-							);
+														<Match
+															when={isSupported}
+														>
+															Available on{" "}
+															{platform}
+														</Match>
+														<Match
+															when={
+																!props.isLatestVersion
+															}
+														>
+															Unavailable on{" "}
+															{platform}
+														</Match>
+													</Switch>
+												</p>
+											</Tooltip.Content>
+										</Tooltip.Portal>
+									</Tooltip>
+								);
+							});
+
+							return <>{tooltipContent()}</>;
 						}}
 					</For>
 				</div>
